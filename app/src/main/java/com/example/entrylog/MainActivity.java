@@ -1,6 +1,7 @@
 package com.example.entrylog;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -30,7 +31,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String getUsername=e1.getText().toString();
                 String getPassword=e2.getText().toString();
-                Toast.makeText(getApplicationContext(),getUsername+" "+getPassword,Toast.LENGTH_LONG).show();
+               if(getUsername.equals("Admin")&&getPassword.equals("12345"))
+               {
+                   Intent i= new Intent(getApplicationContext(), LogEntry.class);
+                   startActivity(i);
+               }
+               else
+               {
+                   Toast.makeText(getApplicationContext(),"INVALID",Toast.LENGTH_LONG).show();
+               }
 
             }
         });
