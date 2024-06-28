@@ -2,6 +2,7 @@ package com.example.entrylog;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        SharedPreferences prefer=getSharedPreferences("logentry",MODE_PRIVATE);
+        String username=prefer.getString("user",null);
+        if(username!=null)
+        {
+            Intent i= new Intent(getApplicationContext(), LogEntry.class);
+            startActivity(i);
+        }
+
         e1=(EditText)findViewById(R.id.uname);
         e2=(EditText)findViewById(R.id.pass);
         b1=(AppCompatButton)findViewById(R.id.logbtn);
@@ -31,14 +40,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String getUsername=e1.getText().toString();
                 String getPassword=e2.getText().toString();
-               if(getUsername.equals("Admin")&&getPassword.equals("12345"))
+               if(getUsername.equals("admin")&&getPassword.equals("12345"))
                {
+                   SharedPreferences prefer=getSharedPreferences("logentry",MODE_PRIVATE);
+                   SharedPreferences.Editor editor=prefer.edit();
+                   editor.putString("user","admin");
+                   editor.apply();
                    Intent i= new Intent(getApplicationContext(), LogEntry.class);
                    startActivity(i);
                }
                else
                {
-                   Toast.makeText(getApplicationContext(),"INVALID",Toast.LENGTH_LONG).show();
+                   Toast.makeText(getApplicationContext(),"INVALID USERNAME OR PASSWORD",Toast.LENGTH_LONG).show();
                }
 
             }

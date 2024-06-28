@@ -4,8 +4,15 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="80px"
-    android:background="#A5C5C8"
+    android:background="@drawable/background"
+
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/fis"
+        android:layout_margin="100px"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,6 +24,7 @@
         android:hint="Enter Your User Name"
         android:layout_margin="20px"
         android:id="@+id/uname"
+        android:drawableLeft="@drawable/baseline_3p_24"
         />
     <TextView
         android:layout_width="match_parent"
@@ -30,6 +38,7 @@
         android:layout_margin="20px"
         android:id="@+id/pass"
         android:inputType="textPassword"
+        android:drawableLeft="@drawable/baseline_remove_red_eye_24"
         />
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
@@ -37,14 +46,9 @@
         android:text="LOGIN"
         android:layout_margin="20px"
         android:id="@+id/logbtn"
+        android:background="#3F51B5"
         />
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="REGISTRATION"
-        android:layout_margin="20px"
-        android:id="@+id/reg"
-        />
+
 
 
 

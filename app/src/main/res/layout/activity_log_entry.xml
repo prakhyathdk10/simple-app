@@ -4,8 +4,14 @@
     android:orientation="vertical"
     android:padding="80px"
     android:gravity="center"
-    android:background="#CAEAED"
+    android:background="@drawable/background"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/user"
+        android:layout_margin="40px"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,6 +22,7 @@
         android:layout_height="wrap_content"
         android:hint="Enter the name"
         android:id="@+id/name"
+        android:drawableLeft="@drawable/baseline_3p_24"
         />
     <TextView
         android:layout_width="match_parent"
@@ -28,6 +35,7 @@
         android:hint="Enter the Admission no"
         android:inputType="textMultiLine"
         android:id="@+id/adno"
+        android:drawableLeft="@drawable/baseline_numbers_24"
         />
     <TextView
         android:layout_width="match_parent"
@@ -40,6 +48,7 @@
         android:hint="Enter the System No"
         android:inputType="number"
         android:id="@+id/sno"
+        android:drawableLeft="@drawable/baseline_computer_24"
         />
     <TextView
         android:layout_width="match_parent"
@@ -51,6 +60,7 @@
         android:layout_height="wrap_content"
         android:hint="Enter The Department Name"
         android:id="@+id/dno"
+        android:drawableLeft="@drawable/baseline_menu_book_24"
         />
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
@@ -58,6 +68,7 @@
         android:text="ADD"
         android:layout_margin="20px"
         android:id="@+id/add"
+        android:background="#3F51B5"
         />
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
@@ -65,6 +76,7 @@
         android:text="Logout"
         android:layout_margin="20px"
         android:id="@+id/logout"
+        android:background="#3F51B5"
         />
 
 
